@@ -1,0 +1,15 @@
+%% Defining the system: 
+% System equation is given as:
+% Xk = (I + A*T)*X_{k-1} + T*(V_k')
+% or 
+% Xk = F*X_{k-1} + V_k
+% Where T is sampling time and 
+
+A = [0 0 1 0;
+     0 0 0 1; 
+     0 0 0 0; 
+     0 0 0 0]; 
+
+F = eye(4)+A.*T
+
+ 
