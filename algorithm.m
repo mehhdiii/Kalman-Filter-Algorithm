@@ -24,8 +24,35 @@ A = [0 0 1 0;
 
 F = eye(4)+A.*T; % system coefficient 
 
+%Defining Covariance matrix of noise vector
+var_v1 = T^2 * 10^-5
+var_v2 = T^2 * 10^-5
+covar_vk = [var_v1 0;
+            0 var_v2
+                    ];
+                    
+mean_vk = 0; % mean of Vk
+R = mvnrnd(mean_vk, covar_vk, 2); % random noise vector of dim 2x1
+
+
+
+
+
 %% Sensor
 H = eye(4); 
+
+%Defining Covariance matrix of noise vector
+var_x1 = 10^-4;
+var_y1 = 10^-4;
+var_v1 = 10^-6;
+var_v2 = 10^-6; 
+
+covar_vk = [var_v1 0;
+            0 var_v2
+                    ];
+                    
+mean_vk = 0; % mean of Vk
+R = mvnrnd(mean_vk, covar_vk, 2); % random noise vector of dim 2x1
 
 
 
