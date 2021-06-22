@@ -1,4 +1,4 @@
-%% Definition: 
+%% Definitions: 
 
 % System equation is given as:
 % Xk = (I + A*T)*X_{k-1} + T*(V_k')
@@ -14,6 +14,8 @@
 
 % The sensor measures all 4 observations inside Xk i.e. x_pos, y_pos, v_x, v_y 
 
+
+
 %% System 
 T = 0.1; %sampling time
 
@@ -25,16 +27,15 @@ A = [0 0 1 0;
 F = eye(4)+A.*T; % system coefficient 
 
 %Defining Covariance matrix of noise vector
-var_v1 = T^2 * 10^-5
-var_v2 = T^2 * 10^-5
+var_v1 = T^2 * 10^-5;
+var_v2 = T^2 * 10^-5;
 covar_vk = [var_v1 0;
             0 var_v2
                     ];
                     
-mean_vk = 0; % mean of Vk
-R = mvnrnd(mean_vk, covar_vk, 2); % random noise vector of dim 2x1
+mean_vk = zeros(1, 2); % mean of Vk
 
-
+vk = mvnrnd(mean_vk, covar_vk, 2); % random noise vector of dim 2x1
 
 
 
@@ -49,11 +50,12 @@ var_v2 = 10^-6;
 
 covar_vk = [var_v1 0;
             0 var_v2
-                    ];
-                    
+                    ];                    
 mean_vk = 0; % mean of Vk
 R = mvnrnd(mean_vk, covar_vk, 2); % random noise vector of dim 2x1
 
+
+%% Kalman Filter Algorithm
 
 
 
