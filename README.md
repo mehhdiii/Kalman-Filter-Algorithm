@@ -1,5 +1,5 @@
 # Kalman-Filter
-The repository implements Kalman Filter for state estimation problem. We assume Markov process in deriving the KF equations. The state vector X is  are as follows: 
+The repository implements Kalman Filter for state estimation problem. We assume Markov process in deriving the KF equations. The state vector X is as follows: 
 
 | State | Description                 |
 | ----- | --------------------------- |
