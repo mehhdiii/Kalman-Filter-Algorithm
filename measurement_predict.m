@@ -1,8 +1,8 @@
-function [yhat_k_given_last, K_k] = measurement_predict(xhat_k_given_last,P_k_given_last, H, R)
+function [yhat_predict, K_k] ...
+    = measurement_predict(xhat_predict,P_predict, H, Rk)
 %Calculates the measurement's prediction in KF algorithm
 
-yhat_k_given_last = H*xhat_k_given_last; 
-S_k = H*P_k_given_last * H' + R; 
-K_k = p_k_given_last* H' * inv(S_k); 
+yhat_predict = H*xhat_predict; 
+S_k = H*P_predict * H' + Rk; 
+K_k = (P_predict* H')*inv(S_k); 
 end
-
