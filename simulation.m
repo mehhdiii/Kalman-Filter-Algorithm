@@ -57,6 +57,9 @@ R = mvnrnd(mean_vk, covar_vk, 2); % random noise vector of dim 2x1
 
 %% Kalman Filter Algorithm
 
+% call the function as follows: 
+% KalmanFilter(y_k, xhat_last_given_last,P_last_given_last, F, Q, H, R)
+
 
 
  
