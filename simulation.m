@@ -29,7 +29,7 @@ F = eye(4)+A.*T; % system coefficient
 %Defining Covariance matrix of noise vector
 var_v1 = T^2 * 1e-3;
 var_v2 = T^2 * 1e-3;
-Qk = diag([0 0 var_v1 var_v2]);
+Qk = diag([0 0 var_v1 var_v2]); 
 
 % % Sensor
 H = eye(4);
